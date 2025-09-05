@@ -7,8 +7,34 @@
   padding: 12px;
 }
 
+.recipeCard h2 {
+  font-size: 2rem;
+  line-height: 1.3em;
+  margin-top: 0.3em;
+  margin-bottom: 0.3em;
+}
+
 .recipeCard img {
   width: 100%;
   border-radius: 12px;
   align-self: center;
+}
+
+.recipeInfo {
+  margin-left: 0.5em;
+}
+
+.recipeProperties {
+  font-size: 1rem;
+  line-height: 1.5em;
+}
+
+.recipeProperties div {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.recipeProperties i {
+  padding-top: 4px;
 }

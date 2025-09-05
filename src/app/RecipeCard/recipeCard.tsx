@@ -24,11 +24,11 @@ function RecipeCard(props: RecipeCard) {
 
   return(<div className={styles.recipeCard}>
     <img src={props.image ? props.image : placeholderImage}/>
-    <div>
+    <div className={styles.recipeInfo}>
       <h2>{props.name}</h2>
-      <div>
-        {props.cookMinutes ? <><i className="fi fi-tr-clock-three"></i><p>{formattedCookTime}</p></> : <></>}
-        {props.servings ? <><i className="fi fi-tr-plate-utensils"></i><p>{`${props.servings} serving${props.servings > 1 ? 's' : ''}`}</p></> : <></>}
+      <div className={styles.recipeProperties}>
+        {props.cookMinutes ? <div><i className="fi fi-tr-clock-three"></i><p>{formattedCookTime}</p></div> : <></>}
+        {props.servings ? <div><i className="fi fi-tr-plate-utensils"></i><p>{`${props.servings} serving${props.servings > 1 ? 's' : ''}`}</p></div> : <></>}
       </div>
     </div>
   </div>);
