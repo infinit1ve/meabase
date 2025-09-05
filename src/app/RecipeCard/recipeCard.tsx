@@ -1,13 +1,34 @@
-function RecipeCard() {
-  const image: string = 'https://static01.nyt.com/images/2023/08/31/multimedia/RS-Lasagna-hkjl/RS-Lasagna-hkjl-superJumbo.jpg'
-  const name: string = ''
-  return(<div>
-    <img src={image}/>
+import styles from './recipeCard.module.css';
+interface RecipeCard {
+  name: string;
+  image?: string;
+  cookMinutes?: number;
+  servings?: number;
+}
+
+function RecipeCard(props: RecipeCard) {
+  const placeholderImage: string = 'https://static01.nyt.com/images/2023/08/31/multimedia/RS-Lasagna-hkjl/RS-Lasagna-hkjl-superJumbo.jpg';
+  
+  var formattedCookTime: string = '';
+  if(props.cookMinutes) {
+    var formattedCookTime = (() => {
+    const hours = Math.floor(props.cookMinutes / 60);
+    const minutes = props.cookMinutes % 60;
+  
+    const hourText = hours ? `${hours} hour${hours > 1 ? 's' : ''} ` : '';
+    const minuteText = minutes ? `${minutes} minute${minutes > 1 ? 's' : ''}` : '';
+  
+    return hourText + minuteText;
+    })();
+  }
+
+  return(<div className={styles.recipeCard}>
+    <img src={props.image ? props.image : placeholderImage}/>
     <div>
-      <h2>Lasagna</h2>
+      <h2>{props.name}</h2>
       <div>
-        <i className="fi fi-tr-clock-three"></i>
-        <i className="fi fi-tr-plate-utensils"></i>
+        {props.cookMinutes ? <><i className="fi fi-tr-clock-three"></i><p>{formattedCookTime}</p></> : <></>}
+        {props.servings ? <><i className="fi fi-tr-plate-utensils"></i><p>{`${props.servings} serving${props.servings > 1 ? 's' : ''}`}</p></> : <></>}
       </div>
     </div>
   </div>);
