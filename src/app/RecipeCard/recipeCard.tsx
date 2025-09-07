@@ -3,6 +3,7 @@ interface RecipeCard {
   name: string;
   image?: string;
   cookMinutes?: number;
+  prepMinutes?: number;
   servings?: number;
 }
 
@@ -10,13 +11,17 @@ function RecipeCard(props: RecipeCard) {
   const placeholderImage: string = 'https://static01.nyt.com/images/2023/08/31/multimedia/RS-Lasagna-hkjl/RS-Lasagna-hkjl-superJumbo.jpg';
   
   var formattedCookTime: string = '';
-  if(props.cookMinutes) {
+  if(props.cookMinutes || props.prepMinutes) {
     var formattedCookTime = (() => {
-    const hours = Math.floor(props.cookMinutes / 60);
-    const minutes = props.cookMinutes % 60;
+      const cookMinutes = props.cookMinutes ? props.cookMinutes : 0
+      const prepMinutes = props.prepMinutes ? props.prepMinutes : 0
+
+      const totalTime = cookMinutes + prepMinutes;
+      const hours = Math.floor(totalTime / 60);
+      const minutes = totalTime % 60;
   
-    const hourText = hours ? `${hours} hour${hours > 1 ? 's' : ''} ` : '';
-    const minuteText = minutes ? `${minutes} minute${minutes > 1 ? 's' : ''}` : '';
+      const hourText = hours ? `${hours} hour${hours > 1 ? 's' : ''} ` : '';
+      const minuteText = minutes ? `${minutes} minute${minutes > 1 ? 's' : ''}` : '';
   
     return hourText + minuteText;
     })();

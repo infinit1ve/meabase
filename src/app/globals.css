@@ -1,10 +1,19 @@
 @media (prefers-color-scheme: light) {
-  
+  :root {
+    --bg-dark: hsl(0 0% 90%);
+    --bg: hsl(0 0% 100%);
+    --bg-light: hsl(0 0% 95%);
+    --text: hsl(0 0% 5%);
+    --text-muted: hsl(0 0% 31%);
+    --highlight: hsl(0 0% 61%);
+    --border: hsl(0 0% 72%);
+    --border-muted: hsl(0 0% 82%);
+  }
 }
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg-dark: hsl(0 0% 0%);
-    --bg: hsl(0 0% 5%);
+    --bg-dark: hsl(0 0% 5%);
+    --bg: hsl(0 0% 0%);
     --bg-light: hsl(0 0% 10%);
     --text: hsl(0 0% 95%);
     --text-muted: hsl(0 0% 69%);
@@ -15,13 +24,19 @@
 }
 
 body {
-  background-color: var(--bg-dark);
+  background-color: var(--bg);
+  margin: 0;
 }
 
 p, i {
   color: var(--text-muted);
   font-family: 'Archivo-Regular';
   margin: 0;
+}
+
+button, button i {
+  color: var(--text);
+  font-family: 'Archivo-Regular';
 }
 
 h1, h2, h3, h4, h5 {

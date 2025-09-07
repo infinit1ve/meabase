@@ -1,0 +1,12 @@
+.recipeList {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 8px;
+}
+
+.recipeList > * {
+  flex: 0 0 50%; /* each child takes equal space */
+  box-sizing: border-box;
+}
