@@ -1,11 +1,17 @@
-import styles from './recipeCard.module.css';
+import stylesSmall from './recipeCardSmall.module.css';
+import stylesMedium from './recipeCardMedium.module.css';
+
 interface RecipeCard {
+  style: number,
   name: string;
   image?: string;
   cookMinutes?: number;
   prepMinutes?: number;
   servings?: number;
 }
+
+import ClockIcon from '../icons/clock-three.svg';
+import PortionIcon from '../icons/plate-utensils.svg'
 
 function RecipeCard(props: RecipeCard) {
   const placeholderImage: string = 'https://static01.nyt.com/images/2023/08/31/multimedia/RS-Lasagna-hkjl/RS-Lasagna-hkjl-superJumbo.jpg';
@@ -27,13 +33,16 @@ function RecipeCard(props: RecipeCard) {
     })();
   }
 
-  return(<div className={styles.recipeCard}>
+  var stylesSize
+  props.style == 1 ? stylesSize = stylesSmall : stylesSize = stylesMedium
+
+  return(<div className={stylesSize.recipeCard}>
     <img src={props.image ? props.image : placeholderImage}/>
-    <div className={styles.recipeInfo}>
-      <h2>{props.name}</h2>
-      <div className={styles.recipeProperties}>
-        {props.cookMinutes ? <div><i className="fi fi-tr-clock-three"></i><p>{formattedCookTime}</p></div> : <></>}
-        {props.servings ? <div><i className="fi fi-tr-plate-utensils"></i><p>{`${props.servings} serving${props.servings > 1 ? 's' : ''}`}</p></div> : <></>}
+    <div className={stylesSize.recipeInfo}>
+      <h5>{props.name}</h5>
+      <div className={stylesSize.recipeProperties}>
+        {props.cookMinutes ? <div><ClockIcon className={stylesSize.icon}/><small>{formattedCookTime}</small></div> : <></>}
+        {props.servings ? <div><PortionIcon className={stylesSize.icon}/><small>{`${props.servings} serving${props.servings > 1 ? 's' : ''}`}</small></div> : <></>}
       </div>
     </div>
   </div>);

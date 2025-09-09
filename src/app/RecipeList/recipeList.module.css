@@ -1,11 +1,12 @@
-.recipeList {
-  width: 100%;
+.recipeSection {
+  width: 50%;
   display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
+  flex-direction: column;
+  gap: 8px;
 }
 
-.recipeList > * {
-  flex: 0 0 50%; /* each child takes equal space */
-  box-sizing: border-box;
+.recipeList {
+  display: flex;
+  gap: 8px;
+  width: 100%;
 }
