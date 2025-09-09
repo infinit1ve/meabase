@@ -1,40 +1,25 @@
 .recipeCard {
-  height: fit-content;
-  background-color: var(--bg-light);
+  padding: 10px;
+  background-color: var(--bg);
   display: flex;
   flex-direction: column;
-  border-radius: 24px;
-  padding: 12px;
-}
-
-.recipeCard h2 {
-  font-size: 1.5rem;
-  line-height: 1.3em;
-  margin-top: 0.3em;
-  margin-bottom: 0.3em;
+  min-width: 179px;
+  max-width: min-content;
+  border-radius: 20px;
+  gap: 7px;
 }
 
 .recipeCard img {
-  width: 100%;
-  border-radius: 12px;
-  align-self: center;
+  border-radius: 10px;
 }
 
 .recipeInfo {
-  margin-left: 0.5em;
-}
-
-.recipeProperties {
-  font-size: 1rem;
-  line-height: 1.5em;
-}
-
-.recipeProperties div {
+  padding-left: 6px;
   display: flex;
-  align-items: center;
-  gap: 0.5em;
+  flex-direction: column;
+  gap: 4px
 }
 
-.recipeProperties i {
-  padding-top: 4px;
+.recipeInfo h2 {
+  font-weight: bold;
 }
