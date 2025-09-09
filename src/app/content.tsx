@@ -1,8 +1,6 @@
 import Counter from "./Counter/Counter";
-import SmallViewButton from "./ViewButtons/Small/smallViewButton";
-import MediumViewButton from "./ViewButtons/Medium/mediumViewButton";
-import SearchBar from "./SearchBar/searchBar";
 import RecipeList from "./RecipeList/recipeList";
+import Toolbar from "./Toolbar/toolbar";
 
 function Content() {
   const styles = {
@@ -11,11 +9,9 @@ function Content() {
 
   return(
     <div style={styles}>
-      <SearchBar/>
+      <Toolbar/>
       <RecipeList/>
       <Counter initialValue={2}/>
-      <SmallViewButton state={true}/>
-      <MediumViewButton state={false}/>
     </div>
   );
 }

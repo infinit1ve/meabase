@@ -7,22 +7,19 @@ import styles from './mediumViewButton.module.css'
 import { useState } from 'react'
 
 interface button {
-  state: boolean
-  onClick?: any
+  view: boolean
+  setView: any
 }
 
 function MediumViewButton(props: button) {
 
-  const [state, setState] = useState(props.state);
-
   const clickHandler = () => {
-    setState(!state);
-    console.log(!state);
+    props.setView(false);
   }
 
-  if(state) {
+  if(props.view) {
     return(
-      <div onClick={clickHandler} className={stylesActive.button}>
+      <div className={stylesActive.button}>
         <SmallViewIcon className={styles.icon}/>
       </div>
     );
