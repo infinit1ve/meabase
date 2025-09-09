@@ -1,7 +1,7 @@
 import styles from './header.module.css'
 import HamburgerIcon from '../icons/menu-burger.svg'
 
-function Header() { // bigger clickable area on hamburgermenu
+function Header() { // bigger clickable area on hamburgermenu and cursor pointer
   return(
     <>
       <header className={styles.header}>
