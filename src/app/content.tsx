@@ -14,8 +14,8 @@ function Content() {
       <SearchBar/>
       <RecipeList/>
       <Counter initialValue={2}/>
-      <SmallViewButton state={false}/>
-      <MediumViewButton state={true}/>
+      <SmallViewButton state={true}/>
+      <MediumViewButton state={false}/>
     </div>
   );
 }
