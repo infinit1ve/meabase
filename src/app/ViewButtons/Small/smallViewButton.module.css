@@ -1,0 +1,16 @@
+.icon {
+  width: 24px;
+  height: 24px;
+  fill: var(--bg-light);
+}
+
+.button {
+  width: 44px;
+  height: 44px;
+  background-color: var(--bg-dark);
+  border-radius: 22px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}

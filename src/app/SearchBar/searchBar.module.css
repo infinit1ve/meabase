@@ -7,6 +7,7 @@
   align-items: center;
   padding-left: 18px;
   padding-right: 5px;
+  box-shadow: var(--shadow);
 }
 
 .searchWrapper div {
@@ -14,10 +15,11 @@
   width: 34px;
   background-color: var(--primary);
   border-radius: 17px;
-  box-shadow: 0px 4px 20px rgba(0, 85, 102, 0.1), 0px 4px 10px rgba(0, 85, 102, 0.05);
   display: flex;
   justify-content: center;
   align-items: center;
+  box-shadow: var(--shadow-secondary);
+  cursor: pointer;
 }
 
 .icon {
@@ -36,6 +38,7 @@
   width: calc(100% - 34px);
   font-family: 'Archivo-Regular';
   -webkit-tap-highlight-color: transparent;
+  cursor: pointer;
 }
 
 .searchWrapper input:focus {
