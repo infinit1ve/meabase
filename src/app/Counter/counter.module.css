@@ -1,0 +1,30 @@
+.counter {
+  height: 44px;
+  width: 122px;
+  background-color: var(--bg-light);
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: var(--shadow);
+}
+
+.counter p {
+  color: var(--text);
+  font-family: 'ClashDisplay-Variable';
+  font-weight: 600;
+}
+
+.button {
+  width: 44px;
+  height: 42px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon {
+  height: 24px;
+  width: 24px;
+  fill: var(--text);
+}
