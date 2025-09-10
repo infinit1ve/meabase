@@ -1,0 +1,22 @@
+.button {
+  border: 1px solid var(--primary);
+  border-radius: 11px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: transparent;
+  height: 36px;
+  width: 84px;
+  padding: 5px 8px 5px 6px
+}
+
+.icon {
+  height: 24px;
+  width: 24px;
+  fill: var(--bg);
+}
+
+.text {
+  color: var(--bg);
+  font-weight: 600;
+}

@@ -11,14 +11,14 @@
   justify-content: space-between;
   align-items: center;
   height: 67px;
-  padding: 0 24px;
+  padding: 0 10px;
 }
 
-.navigation div {
+.menuLogo {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 22px;
+  gap: 10px;
 }
 
 .headerEmptySpace {
@@ -29,6 +29,14 @@
 .header h1 {
   color: var(--bg-light);
   font-weight: 600;
+}
+
+.button {
+  height: 44px;
+  width: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .icon {
