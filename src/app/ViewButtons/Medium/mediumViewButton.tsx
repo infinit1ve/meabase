@@ -4,20 +4,18 @@ import SmallViewIcon from '../../icons/category-alt2.svg'
 import stylesActive from './mediumViewButtonActive.module.css'
 import styles from './mediumViewButton.module.css'
 
-import { useState } from 'react'
-
 interface button {
-  view: boolean
+  view: number
   setView: any
 }
 
 function MediumViewButton(props: button) {
 
   const clickHandler = () => {
-    props.setView(false);
+    props.setView(1);
   }
 
-  if(props.view) {
+  if(props.view == 1) {
     return(
       <div className={stylesActive.button}>
         <SmallViewIcon className={styles.icon}/>

@@ -1,8 +1,9 @@
-import stylesSmall from './recipeCardSmall.module.css';
-import stylesMedium from './recipeCardMedium.module.css';
+import styles0 from './recipeCardSmall.module.css';
+import styles1 from './recipeCardMedium.module.css';
 
 interface RecipeCard {
-  style: number,
+  key: number,
+  view: number,
   name: string;
   image?: string;
   cookMinutes?: number;
@@ -34,9 +35,13 @@ function RecipeCard(props: RecipeCard) {
   }
 
   var stylesSize
-  props.style == 1 ? stylesSize = stylesSmall : stylesSize = stylesMedium
+  if(props.view == 0) {
+    stylesSize = styles0;
+  } else {
+    stylesSize = styles1;
+  }
 
-  return(<div className={stylesSize.recipeCard}>
+  return(<div key={props.key} className={stylesSize.recipeCard}>
     <img src={props.image ? props.image : placeholderImage}/>
     <div className={stylesSize.recipeInfo}>
       <h5>{props.name}</h5>

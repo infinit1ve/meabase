@@ -6,16 +6,13 @@ import SmallViewButton from "../ViewButtons/Small/smallViewButton";
 import styles from './toolbar.module.css';
 import { useState } from "react";
 
-function Toolbar() {
-
-  const [view, setView] = useState(true);
-  console.log(view);
+function Toolbar(props: {setView: any, view: number}) {
   
   return(
     <div className={styles.toolbar}>
       <SearchBar/>
-      <SmallViewButton setView={setView} view={view}/>
-      <MediumViewButton setView={setView} view={!view}/>
+      <SmallViewButton setView={props.setView} view={props.view}/>
+      <MediumViewButton setView={props.setView} view={props.view}/>
     </div>
   );
 }

@@ -1,4 +1,5 @@
 .toolbar {
+  margin-bottom: 8px;
   width: calc(100% - 12px);
   height: 57px;
   background-color: var(--bg);

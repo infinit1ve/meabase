@@ -1,29 +1,36 @@
 import RecipeCard from "../RecipeCard/recipeCard";
 import styles from './recipeList.module.css'
 
-function RecipeList() {
+function RecipeList(props: {view: number}) {
 
-  // divide the list into two and make two columns, and put near each other
-  // instead of display: grid of flex
-  // on bigger viewports maybe switch to flex or more columns
+  type recipesFormat = {
+    id: number;
+    name: string;
+    cookMinutes?: number;
+    prepMinutes?: number;
+    servings?: number;
+    image?: string;
+  }
+  
+  const recipes: Array<recipesFormat> = [
+    {id: 0, name: 'Lasagna', cookMinutes: 70, prepMinutes: 15, servings: 4},
+    {id: 1, name: 'The Best Ratatoulle', cookMinutes: 10, prepMinutes: 110, servings: 1, image: 'https://d2vsf1hynzxim7.cloudfront.net/production/media/26345/responsive-images/8489901_FNK_the-best-ratatouille_H___default_2480_1860.webp'},
+    {id: 2, name:'Dark Chocolate & Caramelised Banana Pie', cookMinutes: 60, prepMinutes: 35, servings: 12, image: 'https://d2vsf1hynzxim7.cloudfront.net/production/media/22745/responsive-images/CCBKN210_3001___default_1077_807.jpg'},
+    {id: 3, name: 'California BLT Egg-in-a-Hole', cookMinutes: 25, prepMinutes: 5, servings: 1, image: 'https://d2vsf1hynzxim7.cloudfront.net/production/media/12521/responsive-images/foodnetwork-image-835c2e85-dd2f-449d-8772-cd20c8ece0a1___default_572_429.webp'},
+  ]
+
+  const recipesRender = () => {
+    recipes.map(recipe => (
+      <RecipeCard key={recipe.id} view={props.view} {...recipe} />
+    ));
+  }
 
   return(
-  <div className={styles.recipeList}>
-    <div className={styles.recipeSection}>
-      <RecipeCard style={1} name='Lasagna' cookMinutes={70} prepMinutes={15} servings={4}/>
-      <RecipeCard style={1} name='The Best Ratatouille' cookMinutes={10} servings={1} image='https://d2vsf1hynzxim7.cloudfront.net/production/media/26345/responsive-images/8489901_FNK_the-best-ratatouille_H___default_2480_1860.webp'/>
-      <RecipeCard style={1} name='Dark Chocolate & Caramelised Banana Pie' cookMinutes={60} servings={12} image='https://d2vsf1hynzxim7.cloudfront.net/production/media/22745/responsive-images/CCBKN210_3001___default_1077_807.jpg'/>
-      <RecipeCard style={1} name='California BLT Egg-in-a-Hole' cookMinutes={25} servings={1} image='https://d2vsf1hynzxim7.cloudfront.net/production/media/12521/responsive-images/foodnetwork-image-835c2e85-dd2f-449d-8772-cd20c8ece0a1___default_572_429.webp'/>
-      <RecipeCard style={1} name='Dark Chocolate & Caramelised Banana Pie Dark Chocolate & Caramelised Banana Pie' cookMinutes={25} servings={1} image='https://d2vsf1hynzxim7.cloudfront.net/production/media/12521/responsive-images/foodnetwork-image-835c2e85-dd2f-449d-8772-cd20c8ece0a1___default_572_429.webp'/>
+    <div className={props.view ? styles.recipeListMedium : styles.recipeListSmall}>
+    {recipes.map(recipe => (
+      <RecipeCard key={recipe.id} view={props.view} {...recipe} />
+    ))}
     </div>
-    <div className={styles.recipeSection}>
-      <RecipeCard style={1} name='Lasagna' cookMinutes={70} prepMinutes={15} servings={4}/>
-      <RecipeCard style={1} name='The Best Ratatouille' cookMinutes={10} servings={1} image='https://d2vsf1hynzxim7.cloudfront.net/production/media/26345/responsive-images/8489901_FNK_the-best-ratatouille_H___default_2480_1860.webp'/>
-      <RecipeCard style={1} name='Dark Chocolate & Caramelised Banana Pie' cookMinutes={60} servings={12} image='https://d2vsf1hynzxim7.cloudfront.net/production/media/22745/responsive-images/CCBKN210_3001___default_1077_807.jpg'/>
-      <RecipeCard style={1} name='California BLT Egg-in-a-Hole' cookMinutes={25} servings={1} image='https://d2vsf1hynzxim7.cloudfront.net/production/media/12521/responsive-images/foodnetwork-image-835c2e85-dd2f-449d-8772-cd20c8ece0a1___default_572_429.webp'/>
-      <RecipeCard style={1} name='Dark Chocolate & Caramelised Banana Pie Dark Chocolate & Caramelised Banana Pie' cookMinutes={25} servings={1} image='https://d2vsf1hynzxim7.cloudfront.net/production/media/12521/responsive-images/foodnetwork-image-835c2e85-dd2f-449d-8772-cd20c8ece0a1___default_572_429.webp'/>
-    </div>
-  </div>
   );
 }
 

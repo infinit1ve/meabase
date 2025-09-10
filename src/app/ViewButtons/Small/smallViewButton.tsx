@@ -7,17 +7,17 @@ import styles from './smallViewButton.module.css'
 import { useState } from 'react'
 
 interface button {
-  view: boolean
+  view: number
   setView: any
 }
 
 function SmallViewButton(props: button) {
 
   const clickHandler = () => {
-    props.setView(true);
+    props.setView(0);
   }
 
-  if(props.view) {
+  if(props.view == 0) {
     return(
       <div className={stylesActive.button}>
         <SmallViewIcon className={styles.icon}/>
