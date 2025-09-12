@@ -1,8 +1,12 @@
+"use client"
+
 import styles from './header.module.css'
 import HamburgerIcon from '../icons/menu-burger.svg'
 import NewButton from './NewButton/newButton';
+import { useWindowWidth } from '@react-hook/window-size';
 
-function Header() { // bigger clickable area on hamburgermenu and cursor pointer
+function Header() { 
+  const width = useWindowWidth();
   return(
     <>
       <header className={styles.header}>
@@ -13,7 +17,7 @@ function Header() { // bigger clickable area on hamburgermenu and cursor pointer
             </div>
             <h1>Meabase</h1>
           </div>
-          <NewButton/>
+          {width < 601 ? <NewButton/> : ''}
         </div>
         <div className={styles.headerEmptySpace}/>
       </header>
@@ -23,3 +27,12 @@ function Header() { // bigger clickable area on hamburgermenu and cursor pointer
 }
 
 export default Header
+
+// Menu structure
+
+// Add Recipe
+// Favourites
+// My Recipes
+// Tags
+// 
+// Settings

@@ -1,0 +1,6 @@
+.main {
+  margin: 8px;
+  width: calc(100% - 16px);
+  z-index: 1;
+  background-color: var(--bg-dark);
+}
